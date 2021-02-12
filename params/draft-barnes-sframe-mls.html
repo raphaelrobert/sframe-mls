@@ -22,21 +22,21 @@ SFrame to secure real-time sessions for groups.
 <meta content="draft-barnes-sframe-mls-latest" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.5.0
-    Python 3.8.5
+    Python 3.8.7
     appdirs 1.4.4
     ConfigArgParse 1.2.3
     google-i18n-address 2.4.0
     html5lib 1.1
-    intervaltree 3.0.2
-    Jinja2 2.11.3
+    intervaltree 3.1.0
+    Jinja2 2.11.2
     kitchen 1.2.6
-    lxml 4.5.0
-    pycountry 19.8.18
-    pyflakes 2.1.1
+    lxml 4.6.2
+    pycountry 20.7.3
+    pyflakes 2.2.0
     PyYAML 5.4.1
-    requests 2.22.0
-    setuptools 45.2.0
-    six 1.14.0
+    requests 2.25.1
+    setuptools 51.3.3
+    six 1.15.0
 -->
 <link href="draft-barnes-sframe-mls.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -849,7 +849,7 @@ address div.right {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Barnes &amp; Robert</td>
-<td class="center">Expires 9 August 2021</td>
+<td class="center">Expires 16 August 2021</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -862,12 +862,12 @@ address div.right {
 <dd class="internet-draft">draft-barnes-sframe-mls-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2021-02-05" class="published">5 February 2021</time>
+<time datetime="2021-02-12" class="published">12 February 2021</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2021-08-09">9 August 2021</time></dd>
+<dd class="expires"><time datetime="2021-08-16">16 August 2021</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -920,7 +920,7 @@ SFrame to secure real-time sessions for groups.<a href="#section-abstract-1" cla
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 9 August 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 16 August 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -948,27 +948,35 @@ SFrame to secure real-time sessions for groups.<a href="#section-abstract-1" cla
         <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
 <a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
         </h2>
-<nav class="toc"><ul class="compact toc ulEmpty">
-<li class="compact toc ulEmpty" id="section-toc.1-1.1">
+<nav class="toc"><ul class="compact ulEmpty toc">
+<li class="compact ulEmpty toc" id="section-toc.1-1.1">
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="xref">1</a>.  <a href="#name-introduction" class="xref">Introduction</a><a href="#section-toc.1-1.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.2">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.2">
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="xref">2</a>.  <a href="#name-sframe-parameter-negotiatio" class="xref">SFrame Parameter Negotiation</a><a href="#section-toc.1-1.2.1" class="pilcrow">¶</a></p>
+<ul class="compact ulEmpty toc">
+<li class="compact ulEmpty toc" id="section-toc.1-1.2.2.1">
+                <p id="section-toc.1-1.2.2.1.1" class="keepWithNext"><a href="#section-2.1" class="xref">2.1</a>.  <a href="#name-sframe-parameter-selection" class="xref">SFrame Parameter Selection</a><a href="#section-toc.1-1.2.2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="xref">3</a>.  <a href="#name-sframe-key-management" class="xref">SFrame Key Management</a><a href="#section-toc.1-1.3.1" class="pilcrow">¶</a></p>
+            </ul>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.4">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.3">
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="xref">3</a>.  <a href="#name-sframe-key-management" class="xref">SFrame Key Management</a><a href="#section-toc.1-1.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="compact ulEmpty toc" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-security-considerations" class="xref">Security Considerations</a><a href="#section-toc.1-1.4.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.5">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="xref">5</a>.  <a href="#name-iana-considerations" class="xref">IANA Considerations</a><a href="#section-toc.1-1.5.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#section-appendix.a" class="xref">Appendix A</a>.  <a href="#name-acknowledgements" class="xref">Acknowledgements</a><a href="#section-toc.1-1.6.1" class="pilcrow">¶</a></p>
+          <li class="compact ulEmpty toc" id="section-toc.1-1.6">
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="xref">6</a>.  <a href="#name-normative-references" class="xref">Normative References</a><a href="#section-toc.1-1.6.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#section-appendix.b" class="xref"></a><a href="#name-authors-addresses" class="xref">Authors' Addresses</a><a href="#section-toc.1-1.7.1" class="pilcrow">¶</a></p>
+          <li class="compact ulEmpty toc" id="section-toc.1-1.7">
+            <p id="section-toc.1-1.7.1"><a href="#section-appendix.a" class="xref">Appendix A</a>.  <a href="#name-acknowledgements" class="xref">Acknowledgements</a><a href="#section-toc.1-1.7.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="compact ulEmpty toc" id="section-toc.1-1.8">
+            <p id="section-toc.1-1.8.1"><a href="#section-appendix.b" class="xref"></a><a href="#name-authors-addresses" class="xref">Authors' Addresses</a><a href="#section-toc.1-1.8.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </nav>
@@ -979,12 +987,13 @@ SFrame to secure real-time sessions for groups.<a href="#section-abstract-1" cla
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">Secure Frames (SFrame) defines a compact scheme for encrypting real-time media.
-In order for SFrame to address cases where media are exchanged among many
-participants (e.g., real-time conferencing), it needs to be augmented with a
-group key management protocol.  The Messaging Layer Security (MLS) protocol
-[!I-D.ietf-mls-protocol] provides continuous group authenticated key exchange.
-MLS provides several important security properties [!I-D.ietf-mls-arch]:<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1">Secure Frames (SFrame) defines a compact scheme for encrypting real-time media
+<span>[<a href="#I-D.omara-sframe" class="xref">I-D.omara-sframe</a>]</span>.  In order for SFrame to address cases where media are
+exchanged among many participants (e.g., real-time conferencing), it needs to be
+augmented with a group key management protocol.  The Messaging Layer Security
+(MLS) protocol <span>[<a href="#I-D.ietf-mls-protocol" class="xref">I-D.ietf-mls-protocol</a>]</span> provides continuous group
+authenticated key exchange.  MLS provides several important security properties
+<span>[<a href="#I-D.ietf-mls-architecture" class="xref">I-D.ietf-mls-architecture</a>]</span>:<a href="#section-1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1-2.1">Group Key Exchange: All members of the group at a given time know a secret key
 that is inaccessible to parties outside the group.<a href="#section-1-2.1" class="pilcrow">¶</a>
@@ -1037,14 +1046,39 @@ uint16 SFrameCipherSuite;<a href="#section-2-4" class="pilcrow">¶</a></p>
   uint8 epoch_bits;
 } SFrameParameters;
 ```<a href="#section-2-6" class="pilcrow">¶</a></p>
-<p id="section-2-7">When an extension of type <code>sframe_parameters</code> appears in an MLS KeyPackage, the
+<p id="section-2-7">The values allowed for <code>SFrameCipherSuite</code> are defined in <span>[<a href="#I-D.omara-sframe" class="xref">I-D.omara-sframe</a>]</span>
+and the IANA registries it references.<a href="#section-2-7" class="pilcrow">¶</a></p>
+<p id="section-2-8">When an extension of type <code>sframe_parameters</code> appears in an MLS KeyPackage, the
 extension data field MUST contain an SFrameCapabilities object.  When such an
 extension appears in a Welcome message, it MUST contain an SFrameParameters
-object.  The ciphersuite values MUST represent valid SFrame ciphersuites.<a href="#section-2-7" class="pilcrow">¶</a></p>
-<p id="section-2-8">The SFrameParameters object for a group, if present, MUST be included in the
+object.  The ciphersuite values MUST represent valid SFrame ciphersuites.<a href="#section-2-8" class="pilcrow">¶</a></p>
+<p id="section-2-9">The SFrameParameters object for a group, if present, MUST be included in the
 GroupContext for the group, as an extension of type <code>sframe_parameters</code>.  This
 ensures that the members of the group agree on the SFrame parameters associated
-to the group.<a href="#section-2-8" class="pilcrow">¶</a></p>
+to the group.<a href="#section-2-9" class="pilcrow">¶</a></p>
+<div id="sframe-parameter-selection">
+<section id="section-2.1">
+        <h3 id="name-sframe-parameter-selection">
+<a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-sframe-parameter-selection" class="section-name selfRef">SFrame Parameter Selection</a>
+        </h3>
+<p id="section-2.1-1">Just as with MLS ciphersuite selection, the creator of an MLS group chooses the
+SFrame parameters to be used for the group.  The parameters are then fixed for
+the lifetime of the group.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
+<p id="section-2.1-2">The creator of the group needs to choose a ciphersuite and an <code>epoch_bits</code>
+value.  The ciphersuite SHOULD be chosen from among those supported by the
+members of the group, as expressed by those members' key packages.  Members that
+don't support the chosen ciphersuite will not be able to send or receive
+SFrame-encrypted media.<a href="#section-2.1-2" class="pilcrow">¶</a></p>
+<p id="section-2.1-3">As discussed below, the <code>epoch_bits</code> field effectively bounds the rate at which
+the epoch can change, at the cost of possible growth in the KID field.
+Applications SHOULD NOT use <code>epoch_bits = 0</code>, unless they have an external
+signal for which epoch's keys are in use.  Otherwise, applications should choose
+a value for <code>epoch_bits</code> such that they expect to never have more than
+<code>2^epoch_bits</code> epochs active at once.  That is, by the time the key for epoch <code>k +
+2^epoch_bits</code> is distributed, all senders should have stopped sending with epoch
+<code>k</code>.<a href="#section-2.1-3" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="sframe-key-management">
@@ -1131,8 +1165,8 @@ SFrame uses signatures, these are the keys used to generate SFrame signatures.<a
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
 <p id="section-4-1">The security properties provided by MLS are discussed in detail in
-[!I-D.ietf-mls-arch] and [!I-D.ietf-mls-protocol].  This document extends those
-guarantees to SFrame.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<span>[<a href="#I-D.ietf-mls-architecture" class="xref">I-D.ietf-mls-architecture</a>]</span> and <span>[<a href="#I-D.ietf-mls-protocol" class="xref">I-D.ietf-mls-protocol</a>]</span>.  This document
+extends those guarantees to SFrame.<a href="#section-4-1" class="pilcrow">¶</a></p>
 <p id="section-4-2">It should be noted that the per-sender keys derived here do not provide
 per-sender authentication, since any member of the group could derive the same
 keys (as indeed they must in order to decrypt the protected payload).
@@ -1175,6 +1209,25 @@ registry, with the following values:<a href="#section-5-1" class="pilcrow">¶</a
 this document.<a href="#section-5-3" class="pilcrow">¶</a></p>
 </section>
 </div>
+<section id="section-6">
+      <h2 id="name-normative-references">
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+      </h2>
+<dl class="references">
+<dt id="I-D.ietf-mls-architecture">[I-D.ietf-mls-architecture]</dt>
+      <dd>
+<span class="refAuthor">Omara, E.</span><span class="refAuthor">, Beurdouche, B.</span><span class="refAuthor">, Rescorla, E.</span><span class="refAuthor">, Inguva, S.</span><span class="refAuthor">, Kwon, A.</span><span class="refAuthor">, and A. Duric</span>, <span class="refTitle">"The Messaging Layer Security (MLS) Architecture"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-mls-architecture-05</span>, <time datetime="2020-07-26" class="refDate">26 July 2020</time>, <span>&lt;<a href="http://www.ietf.org/internet-drafts/draft-ietf-mls-architecture-05.txt">http://www.ietf.org/internet-drafts/draft-ietf-mls-architecture-05.txt</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.ietf-mls-protocol">[I-D.ietf-mls-protocol]</dt>
+      <dd>
+<span class="refAuthor">Barnes, R.</span><span class="refAuthor">, Beurdouche, B.</span><span class="refAuthor">, Millican, J.</span><span class="refAuthor">, Omara, E.</span><span class="refAuthor">, Cohn-Gordon, K.</span><span class="refAuthor">, and R. Robert</span>, <span class="refTitle">"The Messaging Layer Security (MLS) Protocol"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-mls-protocol-11</span>, <time datetime="2020-12-22" class="refDate">22 December 2020</time>, <span>&lt;<a href="http://www.ietf.org/internet-drafts/draft-ietf-mls-protocol-11.txt">http://www.ietf.org/internet-drafts/draft-ietf-mls-protocol-11.txt</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.omara-sframe">[I-D.omara-sframe]</dt>
+    <dd>
+<span class="refAuthor">Omara, E.</span><span class="refAuthor">, Uberti, J.</span><span class="refAuthor">, Gouaillard, A.</span><span class="refAuthor">, and S. Murillo</span>, <span class="refTitle">"Secure Frame (SFrame)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-omara-sframe-01</span>, <time datetime="2020-11-16" class="refDate">16 November 2020</time>, <span>&lt;<a href="http://www.ietf.org/internet-drafts/draft-omara-sframe-01.txt">http://www.ietf.org/internet-drafts/draft-omara-sframe-01.txt</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+</dl>
+</section>
 <div id="acknowledgements">
 <section id="section-appendix.a">
       <h2 id="name-acknowledgements">

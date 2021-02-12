@@ -5,8 +5,8 @@
 Network Working Group                                          R. Barnes
 Internet-Draft                                                     Cisco
 Intended status: Informational                                 R. Robert
-Expires: 9 August 2021                                              Wire
-                                                         5 February 2021
+Expires: 16 August 2021                                             Wire
+                                                        12 February 2021
 
 
     Using Messaging Layer Security (MLS) to Provide Keys for SFrame
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 August 2021.
+   This Internet-Draft will expire on 16 August 2021.
 
 Copyright Notice
 
@@ -66,21 +66,24 @@ Table of Contents
 
    1.  Introduction
    2.  SFrame Parameter Negotiation
+     2.1.  SFrame Parameter Selection
    3.  SFrame Key Management
    4.  Security Considerations
    5.  IANA Considerations
+   6.  Normative References
    Appendix A.  Acknowledgements
    Authors' Addresses
 
 1.  Introduction
 
    Secure Frames (SFrame) defines a compact scheme for encrypting real-
-   time media.  In order for SFrame to address cases where media are
-   exchanged among many participants (e.g., real-time conferencing), it
-   needs to be augmented with a group key management protocol.  The
-   Messaging Layer Security (MLS) protocol [!I-D.ietf-mls-protocol]
-   provides continuous group authenticated key exchange.  MLS provides
-   several important security properties [!I-D.ietf-mls-arch]:
+   time media [I-D.omara-sframe].  In order for SFrame to address cases
+   where media are exchanged among many participants (e.g., real-time
+   conferencing), it needs to be augmented with a group key management
+   protocol.  The Messaging Layer Security (MLS) protocol
+   [I-D.ietf-mls-protocol] provides continuous group authenticated key
+   exchange.  MLS provides several important security properties
+   [I-D.ietf-mls-architecture]:
 
    *  Group Key Exchange: All members of the group at a given time know
       a secret key that is inaccessible to parties outside the group.
@@ -128,6 +131,9 @@ Table of Contents
    struct { SFrameCipherSuite cipher_suite; uint8 epoch_bits; }
    SFrameParameters; ```
 
+   The values allowed for "SFrameCipherSuite" are defined in
+   [I-D.omara-sframe] and the IANA registries it references.
+
    When an extension of type "sframe_parameters" appears in an MLS
    KeyPackage, the extension data field MUST contain an
    SFrameCapabilities object.  When such an extension appears in a
@@ -138,6 +144,29 @@ Table of Contents
    in the GroupContext for the group, as an extension of type
    "sframe_parameters".  This ensures that the members of the group
    agree on the SFrame parameters associated to the group.
+
+2.1.  SFrame Parameter Selection
+
+   Just as with MLS ciphersuite selection, the creator of an MLS group
+   chooses the SFrame parameters to be used for the group.  The
+   parameters are then fixed for the lifetime of the group.
+
+   The creator of the group needs to choose a ciphersuite and an
+   "epoch_bits" value.  The ciphersuite SHOULD be chosen from among
+   those supported by the members of the group, as expressed by those
+   members' key packages.  Members that don't support the chosen
+   ciphersuite will not be able to send or receive SFrame-encrypted
+   media.
+
+   As discussed below, the "epoch_bits" field effectively bounds the
+   rate at which the epoch can change, at the cost of possible growth in
+   the KID field.  Applications SHOULD NOT use "epoch_bits = 0", unless
+   they have an external signal for which epoch's keys are in use.
+   Otherwise, applications should choose a value for "epoch_bits" such
+   that they expect to never have more than "2^epoch_bits" epochs active
+   at once.  That is, by the time the key for epoch "k + 2^epoch_bits"
+   is distributed, all senders should have stopped sending with epoch
+   "k".
 
 3.  SFrame Key Management
 
@@ -223,8 +252,8 @@ Table of Contents
 4.  Security Considerations
 
    The security properties provided by MLS are discussed in detail in
-   [!I-D.ietf-mls-arch] and [!I-D.ietf-mls-protocol].  This document
-   extends those guarantees to SFrame.
+   [I-D.ietf-mls-architecture] and [I-D.ietf-mls-protocol].  This
+   document extends those guarantees to SFrame.
 
    It should be noted that the per-sender keys derived here do not
    provide per-sender authentication, since any member of the group
@@ -251,6 +280,31 @@ Table of Contents
 
    RFC EDITOR: Please replace XXXX throughout with the RFC number
    assigned to this document.
+
+6.  Normative References
+
+   [I-D.ietf-mls-architecture]
+              Omara, E., Beurdouche, B., Rescorla, E., Inguva, S., Kwon,
+              A., and A. Duric, "The Messaging Layer Security (MLS)
+              Architecture", Work in Progress, Internet-Draft, draft-
+              ietf-mls-architecture-05, 26 July 2020,
+              <http://www.ietf.org/internet-drafts/draft-ietf-mls-
+              architecture-05.txt>.
+
+   [I-D.ietf-mls-protocol]
+              Barnes, R., Beurdouche, B., Millican, J., Omara, E., Cohn-
+              Gordon, K., and R. Robert, "The Messaging Layer Security
+              (MLS) Protocol", Work in Progress, Internet-Draft, draft-
+              ietf-mls-protocol-11, 22 December 2020,
+              <http://www.ietf.org/internet-drafts/draft-ietf-mls-
+              protocol-11.txt>.
+
+   [I-D.omara-sframe]
+              Omara, E., Uberti, J., Gouaillard, A., and S. Murillo,
+              "Secure Frame (SFrame)", Work in Progress, Internet-Draft,
+              draft-omara-sframe-01, 16 November 2020,
+              <http://www.ietf.org/internet-drafts/draft-omara-sframe-
+              01.txt>.
 
 Appendix A.  Acknowledgements
 
